@@ -59,4 +59,15 @@ public class MyController {
     }
 }
 ```
+paraméter kiolvasása
+```java
+    // http://localhost:8080/mindmaster/start/Zsolti
+    @GetMapping("start/{username}")
+    public String startGame(@PathVariable("username") String userName){}
+
+    // http://localhost:8080/mindmaster/start?username=Zsolti       
+    @GetMapping("start")
+    public String startGameWithPathParam(@RequestParam("username") String userName){}
+```
+
 
