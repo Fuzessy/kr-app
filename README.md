@@ -47,3 +47,16 @@ public class StartKrApplication {
     </build>
 ``` 
 
+### Rest controller beállítása
+```java
+@RestController
+@RequestMapping("application/request/path")
+public class MyController {
+
+    @GetMapping("other-path")
+    public String myRequest(){
+        return "hello";
+    }
+}
+```
+
