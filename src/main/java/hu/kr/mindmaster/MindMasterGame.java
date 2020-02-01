@@ -16,8 +16,8 @@ public class MindMasterGame {
         GuessResult guessResult = new GuessResult();
 
 
-        List copyOfMaster = new ArrayList(masterSet);
-        List copyOfGuess = new ArrayList(guessPegs);
+        List<PegColor> copyOfMaster = new ArrayList<>(masterSet);
+        List<PegColor> copyOfGuess = new ArrayList<>(guessPegs);
         int whiteCount = getWhiteCount(copyOfMaster, copyOfGuess);
         int blackCount = getBlackCount(copyOfMaster, copyOfGuess);
 
@@ -26,7 +26,7 @@ public class MindMasterGame {
         return guessResult;
     }
 
-    private int getBlackCount(List copyOfMaster, List copyOfGuess) {
+    private int getBlackCount(List<PegColor> copyOfMaster, List<PegColor> copyOfGuess) {
         Iterator<PegColor> guessIterator = copyOfGuess.iterator();
         int blackCount = 0;
         while (guessIterator.hasNext()){
