@@ -1,12 +1,21 @@
 package hu.kr.mindmaster;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 public class MindMasterGame {
     private List<PegColor> masterSet;
+
+    public void generatemasterSet(){
+        masterSet = new ArrayList<>();
+        Random random = new Random();
+        int pegSize = PegColor.values().length;
+        for(int i = 0; i < 4; i++) {
+            masterSet.add(PegColor.values()[random.nextInt(pegSize)]);
+        }
+    }
 
     public void setMasterSet(List<PegColor> masterSet) {
         this.masterSet = masterSet;
