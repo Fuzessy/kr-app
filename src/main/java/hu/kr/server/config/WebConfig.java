@@ -5,6 +5,7 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 
 public class WebConfig {
+
     @Bean
     public FilterRegistrationBean<LoggingFilter> loggingFilter(){
         FilterRegistrationBean<LoggingFilter> registrationBean
@@ -14,6 +15,5 @@ public class WebConfig {
         //registrationBean.addUrlPatterns("/users/*");
         return registrationBean;
     }
-
 
 }

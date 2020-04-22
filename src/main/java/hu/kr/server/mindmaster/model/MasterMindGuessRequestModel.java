@@ -1,6 +1,6 @@
 package hu.kr.server.mindmaster.model;
 
-import hu.kr.mindmaster.PegColor;
+import hu.fuz.mastermind.PegColor;
 
 import java.util.List;
 

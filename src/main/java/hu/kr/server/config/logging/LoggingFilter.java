@@ -24,11 +24,6 @@ import java.util.Map;
 public class LoggingFilter implements Filter {
 
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
-        // SKIP
-    }
-
-    @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         ContentCachingRequestWrapper requestWrapper = new ContentCachingRequestWrapper((HttpServletRequest) servletRequest);
         ContentCachingResponseWrapper responseWrapper = new ContentCachingResponseWrapper((HttpServletResponse) servletResponse);
@@ -45,8 +40,4 @@ public class LoggingFilter implements Filter {
         responseWrapper.copyBodyToResponse();
     }
 
-    @Override
-    public void destroy() {
-        // SKIP
-    }
 }

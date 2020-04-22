@@ -1,11 +1,10 @@
 package hu.kr.server.mindmaster.service;
 
-import hu.kr.mindmaster.GuessResult;
-import hu.kr.mindmaster.MindMasterGame;
+import hu.fuz.mastermind.GuessResult;
+import hu.fuz.mastermind.MasterMindGame;
 import hu.kr.server.mindmaster.model.MasterMindGuessRequestModel;
 import hu.kr.server.mindmaster.model.MasterMindGuessResponseModel;
 import hu.kr.server.mindmaster.model.MasterMindResponseModel;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -14,12 +13,12 @@ import java.util.Map;
 @Service
 public class MindMasterService {
 
-    private Map<String,MindMasterGame> games = new HashMap<>();
+    private Map<String,MasterMindGame> games = new HashMap<>();
 
     public MasterMindResponseModel startGame(String userName) {
-        MindMasterGame mindMasterGame = new MindMasterGame();
-        mindMasterGame.generatemasterSet();
-        games.put(userName, mindMasterGame);
+        MasterMindGame MasterMindGame = new MasterMindGame();
+        MasterMindGame.generatemasterSet();
+        games.put(userName, MasterMindGame);
 
         MasterMindResponseModel responseModel = new MasterMindResponseModel();
         responseModel.message = "Kedves " + userName +"! kezdődhet a játék!";
@@ -28,7 +27,7 @@ public class MindMasterService {
     }
 
     public MasterMindGuessResponseModel guess(MasterMindGuessRequestModel request) {
-        MindMasterGame game = games.get(request.userName);
+        MasterMindGame game = games.get(request.userName);
         GuessResult result = game.guess(request.guess);
 
         MasterMindGuessResponseModel response = new MasterMindGuessResponseModel();
